@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Covid19 API in JS</title>
+        <link rel="icon" href="world.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        
+        <script type="text/javascript">
+          function RefreshPage()
+            {
+              location.reload();
+            }
+    </script>
+        
+    </head>
+    <body>
+        <!-- Navigation -->
+        
+<div class="fixed-top">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#" style="font-weight: bolder;">Covid-19 Live</a>
+    
+      
+              <!-- social icon-->
+              <div class="col-sm-10">
+                <ul class="social-network">
+                  <li><a class="waves-effect waves-dark" href="https://www.facebook.com/danul.hivivihan"><i class="fab fa-facebook-f" style="font-size:18px"></i></a></li>
+                  <li><a class="waves-effect waves-dark" href="https://twitter.com/HiviVihan"><i class="fab fa-twitter" style="font-size:18px"></i></a></li>
+                  <li><a class="waves-effect waves-dark" href="https://github.com/DHVihan"><i class="fab fa-github" style="font-size:18px"></i></a></li>
+                  <li><a class="waves-effect waves-dark" href="https://www.linkedin.com/in/Danul%20Hivi%20Vihan"><i class="fab fa-linkedin-in" style="font-size:18px"></i></a></li>
+                  <li><a class="waves-effect waves-dark" href=mailto:danulvihan@gmail.com><i class="fa fa-envelope" style="font-size:18px"></i></a></li>
+                </ul>
+              </div>
+    
+           
+  </nav>
+  </div><br>
+  
+
+
+
+
+       <div class="container" >
+        <br>
+           <h1 class="shadow p-3 text-center mt-5">Covid 19 Live Update</h1>
+         
+           <br>
+                  <br>
+                  <input type="button" value="Refresh" onclick="RefreshPage()"class="btn btn-info btn-lg shadow p-3 " style="font-size:x-large;background-color: #1065b5bf;border: none;border-radius: 8px;"> 
+                  <h2 class="text-center mb-3" style="font-family: 'Forte', sans-serif !important"><span style="padding-right:3px; padding-top: 3px;">
+                    <img class="manImg" src="sri-lanka.png"></img>                
+                    </span>Sri Lanka</h2>
+                  <br>
+                      
+
+                    <div class="card-deck mb-3" >
+                      
+                      <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#3e3e3f,#ffffff61);border-radius: 15px;">
+                        
+                        <div class="shadow-sm p-3 card-header text-center" style="font-size:larger">Daily Confirmed</div>
+                        <div class="card-body" style="font-size: x-large ;text-align:center;" id="locnew">
+                          </div>
+                          <div class="card-body" style="max-width: 20rem;text-align: center;">
+                            <i class="fas fa-bed" aria-hidden="true" style="text-align: center;color:#cccccc;font-size:30px"></i>
+                          </div>
+                      </div>
+                      <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#4e5d6c6b,#ffffff7a);border-radius: 15px;">
+                        
+                        <div class="shadow-sm p-3 card-header text-center" style="font-size:larger">Total cases</div>
+                        <div class="card-body" style="font-size: x-large ;text-align:center;" id="locase">
+                          
+                        </div>
+                        <div class="card-body" style="max-width: 20rem;text-align: center;">
+                          <i class="fas fa-clinic-medical" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                        </div>
+                      </div>
+                      <div class="shadow p-3 card text-white mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#5cb85c9e,#ffffff73);border-radius: 15px;">
+                        
+                        <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger;">Recovered</div>
+                        <div class="card-body" style="font-size: x-large ;text-align:center;"id="lorec">
+                          </div>
+                          <div class="card-body" style="max-width: 20rem;text-align: center;">
+                            <i class="fas fa-running" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                          </div>
+                      </div>
+                      <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#f0ad4ed9,#ffffff6b);border-radius: 15px;">
+                        
+                        <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger">New Deaths</div>
+                        <div class="card-body" style="font-size: x-large ;text-align:center;"id="lodayde">
+                          </div>
+                          <div class="card-body" style="max-width: 20rem;text-align: center;">
+                            <i class="fas fa-ambulance" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                          </div>
+                      </div>
+                      <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#d9534feb,#ffffff73);border-radius: 15px;">
+                        
+                        <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger"> Total Deaths</div>
+                        <div class="card-body" style="font-size: x-large ;text-align:center;"id="locdea">
+                        </div>
+                        <div class="card-body" style="max-width: 20rem;text-align: center;">
+                          <i class="fas fa-procedures" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                        </div>
+                      </div> 
+                      </div>
+
+
+                      <br>
+                        <br>
+                        <h2 class="text-center mb-3" style="font-family: 'Forte', sans-serif !important"><span><i class="fa fa-globe" aria-hidden="true"></i></span> WorldWide</h2>
+                        <br>
+                          <div class="card-deck mt-3" >
+                            <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#3e3e3f,#ffffff61);border-radius: 15px;">
+                              
+                              <div class="shadow-sm p-3 card-header text-center" style="font-size:larger">Daily Confirmed</div>
+                              <div class="card-body" style="font-size: x-large ;text-align:center;" id="glonew">
+                                </div>
+                                <div class="card-body" style="max-width: 20rem;text-align: center;">
+                                  <i class="fas fa-bed" aria-hidden="true" style="text-align: center;color:#cccccc;font-size:30px"></i>
+                                </div>
+                            </div>
+                            <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#4e5d6c6b,#ffffff7a);border-radius: 15px;">
+                              
+                              <div class="shadow-sm p-3 card-header text-center" style="font-size:larger">Total cases</div>
+                              <div class="card-body" style="font-size: x-large ;text-align:center;" id="data">
+                              </div>
+                              <div class="card-body" style="max-width: 20rem;text-align: center;">
+                                <i class="fas fa-clinic-medical" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                              </div>
+                            </div>
+                            <div class="shadow p-3 card text-white mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#5cb85c9e,#ffffff73);border-radius: 15px;">
+                              
+                              <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger">Recovered</div>
+                              <div class="card-body" style="font-size: x-large ;text-align:center;" id="glorec">
+                                </div>
+                                <div class="card-body" style="max-width: 20rem;text-align: center;">
+                                  <i class="fas fa-running" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                                </div>
+                            </div>
+                            <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#f0ad4ed9,#ffffff6b);border-radius: 15px;">
+                              
+                              <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger">New Deaths</div>
+                              <div class="card-body" style="font-size: x-large ;text-align:center;" id="glodayde">
+                                </div>
+                                <div class="card-body" style="max-width: 20rem;text-align: center;">
+                                  <i class="fas fa-ambulance" aria-hidden="true" style="text-align: center;color: #cccccc;font-size:30px"></i>
+                                </div>
+                            </div>
+                            <div class="shadow p-3 card text-white  mb-10" style="max-width: 20rem;background:linear-gradient(90deg,#d9534feb,#ffffff73);border-radius: 15px;">
+                              
+                              <div class="shadow-sm p-3 card-header text-center"  style="font-size:larger"> Total Deaths</div>
+                              <div class="card-body" style="font-size: x-large ;text-align:center;"  id="glodea">
+                                </div>
+                                <div class="card-body" style="max-width: 20rem;text-align: center;">
+                                  <i class="fas fa-procedures" aria-hidden="true" style="text-align: center;color:#cccccc;font-size:30px"></i>
+                                </div>
+                            </div>
+
+
+         </div>
+         <br>
+         <br>
+         <br> 
+         <div class="footer-copyright text-center py-3">
+           <div class="copyright text-center">Covid-19 DHV © 2020. All Rights Reserved</div></span>
+         
+         </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+
+
+
+      $(document).ready(function(){
+        init()
+
+        function init(){
+          var url="https://hpb.health.gov.lk/api/get-current-statistical"
+
+          var locnew= ''
+         
+
+         $.get(url,function(data){
+           console.log(data.data)
+
+           locnew = `
+
+             ${data.data.local_new_cases}
+           
+           `
+           
+           $("#locnew").html(locnew)
+           
+
+         })
+
+          var locase= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            locase = `
+
+              ${data.data.local_total_cases}
+            
+            `
+            
+            $("#locase").html(locase)
+            
+
+          })
+
+          var lorec= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            lorec = `
+
+              ${data.data.local_recovered}
+            
+            `
+            
+            $("#lorec").html(lorec)
+            
+
+          })
+
+
+          var lodayde= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            lodayde = `
+
+              ${data.data.local_new_deaths}
+            
+            `
+            
+            $("#lodayde").html(lodayde)
+            
+
+          })
+
+
+          var locdea= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            locdea = `
+
+              ${data.data.local_deaths}
+            
+            `
+            
+            $("#locdea").html(locdea)
+            
+
+          })
+
+          var glonew= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            glonew = `
+
+              ${data.data.global_new_cases}
+            
+            `
+            
+            $("#glonew").html(glonew)
+            
+
+          })
+          
+
+          var data= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            data = `
+
+              ${data.data.global_total_cases}
+            
+            `
+            
+            $("#data").html(data)
+            
+
+          })
+
+          var glorec =''
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            
+            glorec= `
+            ${data.data.global_recovered}
+            `
+           
+            $("#glorec").html(glorec)
+
+          })
+
+          var glodayde= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            glodayde = `
+
+              ${data.data.global_new_deaths}
+            
+            `
+            
+            $("#glodayde").html(glodayde)
+            
+
+          })
+
+          var glodea= ''
+         
+
+          $.get(url,function(data){
+            console.log(data.data)
+
+            glodea = `
+
+              ${data.data.global_deaths}
+            
+            `
+            
+            $("#glodea").html(glodea)
+            
+
+          })
+
+        }
+
+       
+      })
+     
+
+    </script>
+
+<script src="smooth-scroll.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+</html>
